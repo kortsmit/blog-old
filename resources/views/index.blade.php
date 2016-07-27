@@ -13,9 +13,7 @@
     <body>
 
         <div class="container">
-            <div class="content">
-                <h1>Blog</h1>
-            </div>
+            <div id="app"></div>
         </div>
 
         <script src="{{ elixir('js/app.js') }}"></script>

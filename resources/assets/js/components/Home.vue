@@ -1,11 +1,11 @@
 <template>
-
+    <section class="content">
+        <h1>Home</h1>
+    </section>
 </template>
 
 <style>
-    body {
-        background-color: #ff0000;
-    }
+
 </style>
 
 <script>

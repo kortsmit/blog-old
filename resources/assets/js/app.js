@@ -3,27 +3,26 @@ import App from './app.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('value');
-
 Vue.use(VueRouter)
-
 Vue.use(VueResource)
 
-var router = new VueRouter({
-    history: true,
-    root: 'dashboard'
-})
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('value');
+
+var router = new VueRouter()
 
 router.map({
     '/': {
-        component: require('./components/Home.vue')
+        component: require('./components/home.vue')
+    },
+    '/blog': {
+        component: require('./components/blog.vue')
     },
     '/about': {
-        component: require('./components/Home.vue')
+        component: require('./components/about.vue')
     },
     '/contact': {
-        component: require('./components/Home.vue')
+        component: require('./components/contact.vue')
     },
 })
 
-router.start(App, 'body')
+router.start(App, '#app')

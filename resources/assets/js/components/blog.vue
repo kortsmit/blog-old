@@ -1,6 +1,6 @@
 <template>
     <section class="content">
-        <h1>About</h1>
+        <h1>Blog</h1>
     </section>
 </template>
 
