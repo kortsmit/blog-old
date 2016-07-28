@@ -5,5 +5,12 @@
 </template>
 
 <script>
+    export default {
+        name: 'blog',
 
+        components: {
+
+        },
+        replace: false
+    }
 </script>

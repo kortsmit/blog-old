@@ -14590,6 +14590,9 @@ router.map({
     '/admin/categories': {
         component: require('./components/admin/categories.vue')
     },
+    '/admin/photos': {
+        component: require('./components/admin/photos.vue')
+    },
     '/admin/users': {
         component: require('./components/admin/users.vue')
     }
@@ -14597,7 +14600,7 @@ router.map({
 
 router.start(_app2.default, '#app');
 
-},{"./app.vue":8,"./components/about.vue":9,"./components/admin.vue":10,"./components/admin/categories.vue":11,"./components/admin/posts.vue":12,"./components/admin/users.vue":13,"./components/blog.vue":14,"./components/contact.vue":15,"./components/home.vue":16,"vue":5,"vue-resource":3,"vue-router":4}],8:[function(require,module,exports){
+},{"./app.vue":8,"./components/about.vue":9,"./components/admin.vue":10,"./components/admin/categories.vue":11,"./components/admin/photos.vue":13,"./components/admin/posts.vue":14,"./components/admin/users.vue":15,"./components/blog.vue":16,"./components/contact.vue":17,"./components/home.vue":18,"vue":5,"vue-resource":3,"vue-router":4}],8:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -14613,6 +14616,8 @@ var _navigation2 = _interopRequireDefault(_navigation);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+    name: 'app',
+
     components: {
         navigation: _navigation2.default
     },
@@ -14634,10 +14639,20 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-39856c35", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./components/template/navigation.vue":17,"vue":5,"vue-hot-reload-api":2,"vueify/lib/insert-css":6}],9:[function(require,module,exports){
+},{"./components/template/navigation.vue":19,"vue":5,"vue-hot-reload-api":2,"vueify/lib/insert-css":6}],9:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
-"use strict";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'about',
+
+    components: {},
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>About</h1>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -14655,18 +14670,23 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":5,"vue-hot-reload-api":2,"vueify/lib/insert-css":6}],10:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _menu = require('./../components/admin/menu.vue');
 
-//import menu from './components/admin/menu.vue'
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+    name: 'admin',
+
     components: {
-        //menu
+        menu: _menu2.default
     },
     replace: false
 };
@@ -14682,10 +14702,30 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-1086fc32", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],11:[function(require,module,exports){
-"use strict";
+},{"./../components/admin/menu.vue":12,"vue":5,"vue-hot-reload-api":2}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _menu = require('./menu.vue');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'categories',
+
+    components: {
+        menu: _menu2.default
+    },
+
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Post Categories</h1>\n\n\n</section>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Post Categories</h1>\n\n    <div class=\"row\">\n        <menu :current=\"categories\"></menu>\n\n    </div>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -14696,10 +14736,89 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-3fb39ec9", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],12:[function(require,module,exports){
-"use strict";
+},{"./menu.vue":12,"vue":5,"vue-hot-reload-api":2}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'menu',
+
+    data: function data() {
+        return {
+            current: ''
+        };
+    }
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Posts</h1>\n\n\n</section>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-md-3\">\n    <div class=\"list-group\">\n        <a v-link=\"{ path: '/admin/posts' }\" class=\"list-group-item\" v-bind:class=\"{ 'active': v-link-active }\">\n            <span class=\"badge\">0</span>\n            Posts\n        </a>\n        <a v-link=\"{ path: '/admin/categories' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Categories\n        </a>\n        <a v-link=\"{ path: '/admin/photos' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Photos\n        </a>\n        <a v-link=\"{ path: '/admin/users' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Users\n        </a>\n    </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-62a2084c", module.exports)
+  } else {
+    hotAPI.update("_v-62a2084c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":5,"vue-hot-reload-api":2}],13:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _menu = require('./menu.vue');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'photos',
+
+    components: {
+        menu: _menu2.default
+    },
+    replace: false
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Photos</h1>\n\n    <div class=\"row\">\n        <menu :current=\"photos\"></menu>\n\n    </div>\n</section>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-7d86792e", module.exports)
+  } else {
+    hotAPI.update("_v-7d86792e", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./menu.vue":12,"vue":5,"vue-hot-reload-api":2}],14:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _menu = require('./menu.vue');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'posts',
+
+    components: {
+        menu: _menu2.default
+    },
+    replace: false
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Posts</h1>\n\n    <div class=\"row\">\n        <menu :current=\"posts\"></menu>\n\n    </div>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -14710,10 +14829,29 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-70a40094", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],13:[function(require,module,exports){
-"use strict";
+},{"./menu.vue":12,"vue":5,"vue-hot-reload-api":2}],15:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _menu = require('./menu.vue');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'users',
+
+    components: {
+        menu: _menu2.default
+    },
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Users</h1>\n\n\n</section>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Users</h1>\n\n    <div class=\"row\">\n        <menu :current=\"users\"></menu>\n\n    </div>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -14724,8 +14862,18 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-6487ef6b", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],14:[function(require,module,exports){
-"use strict";
+},{"./menu.vue":12,"vue":5,"vue-hot-reload-api":2}],16:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'blog',
+
+    components: {},
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Blog</h1>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -14738,8 +14886,18 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-7f8f53e2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],15:[function(require,module,exports){
-"use strict";
+},{"vue":5,"vue-hot-reload-api":2}],17:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'contact',
+
+    components: {},
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Contact</h1>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -14752,10 +14910,20 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-691f05c3", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],16:[function(require,module,exports){
-"use strict";
+},{"vue":5,"vue-hot-reload-api":2}],18:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'home',
+
+    components: {},
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Welcome</h1>\n</section>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<section class=\"content\">\n    <h1>Home</h1>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -14766,13 +14934,18 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-6aa79668", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":2}],17:[function(require,module,exports){
-"use strict";
+},{"vue":5,"vue-hot-reload-api":2}],19:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-exports.default = {};
+exports.default = {
+    name: 'navigation',
+
+    components: {},
+    replace: false
+};
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"https://www.github.com/kortsmit\">kortsmit</a>\n        </div>\n        <div id=\"navbar\" class=\"navbar-collapse collapse\">\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><a v-link=\"{ path: '/' }\">Home</a></li>\n                <li><a v-link=\"{ path: '/blog' }\">Blog</a></li>\n                <li><a v-link=\"{ path: '/about' }\">About</a></li>\n                <li><a v-link=\"{ path: '/contact' }\">Contact</a></li>\n                <li><a v-link=\"{ path: '/admin' }\">Admin</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>\n"
 if (module.hot) {(function () {  module.hot.accept()

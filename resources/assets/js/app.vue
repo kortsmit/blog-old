@@ -17,6 +17,8 @@
     import navigation from './components/template/navigation.vue'
 
     export default {
+        name: 'app',
+
         components: {
             navigation
         },

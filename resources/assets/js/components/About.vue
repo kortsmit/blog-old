@@ -9,5 +9,12 @@
 </style>
 
 <script>
+    export default {
+        name: 'about',
 
+        components: {
+
+        },
+        replace: false
+    }
 </script>

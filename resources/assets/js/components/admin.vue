@@ -10,11 +10,13 @@
 </template>
 
 <script>
-    //import menu from './components/admin/menu.vue'
+    import menu from './../components/admin/menu.vue'
 
     export default {
+        name: 'admin',
+
         components: {
-            //menu
+            menu
         },
         replace: false
     }

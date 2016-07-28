@@ -5,5 +5,12 @@
 </template>
 
 <script>
+    export default {
+        name: 'contact',
 
+        components: {
+
+        },
+        replace: false
+    }
 </script>

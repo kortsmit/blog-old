@@ -29,7 +29,12 @@
 </template>
 
 <script>
-    export default{
+    export default {
+        name: 'navigation',
 
+        components: {
+
+        },
+        replace: false
     }
 </script>

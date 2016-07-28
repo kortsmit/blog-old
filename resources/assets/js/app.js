@@ -32,6 +32,9 @@ router.map({
     '/admin/categories': {
         component: require('./components/admin/categories.vue')
     },
+    '/admin/photos': {
+        component: require('./components/admin/photos.vue')
+    },
     '/admin/users': {
         component: require('./components/admin/users.vue')
     },
