@@ -1,6 +1,5 @@
 var elixir = require('laravel-elixir');
 require('laravel-elixir-vueify');
-require('laravel-elixir-livereload');
 
 elixir.config.js.browserify.watchify.options.poll = true;
 
