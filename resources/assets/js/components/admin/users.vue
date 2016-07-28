@@ -1,6 +1,8 @@
 <template>
     <section class="content">
-        <h1>Contact</h1>
+        <h1>Users</h1>
+
+
     </section>
 </template>
 
