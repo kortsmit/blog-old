@@ -19,3 +19,23 @@ $factory->define(Blog\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(Blog\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->text(),
+        'slug' => $faker->slug($faker->numberBetween(1, 2)),
+        'color' => $faker->hexColor,
+    ];
+});
+
+$factory->define(Blog\Post::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'category_id' => 1,
+        'title' => $faker->realText($faker->numberBetween(10, 15)),
+        'slug' => $faker->slug,
+        'description' => $faker->realText($faker->numberBetween(100, 200)),
+        'text' => $faker->realText($faker->numberBetween(250, 500)),
+        'published' => 1,
+    ];
+});
