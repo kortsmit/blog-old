@@ -51,7 +51,7 @@ function drainQueue() {
     if (draining) {
         return;
     }
-    var timeout = cachedSetTimeout.call(null, cleanUpNextTick);
+    var timeout = cachedSetTimeout(cleanUpNextTick);
     draining = true;
 
     var len = queue.length;
@@ -68,7 +68,7 @@ function drainQueue() {
     }
     currentQueue = null;
     draining = false;
-    cachedClearTimeout.call(null, timeout);
+    cachedClearTimeout(timeout);
 }
 
 process.nextTick = function (fun) {
@@ -80,7 +80,7 @@ process.nextTick = function (fun) {
     }
     queue.push(new Item(fun, args));
     if (queue.length === 1 && !draining) {
-        cachedSetTimeout.call(null, drainQueue, 0);
+        cachedSetTimeout(drainQueue, 0);
     }
 };
 
@@ -14752,7 +14752,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-md-3\">\n    <div class=\"list-group\">\n        <a v-link=\"{ path: '/admin/posts' }\" class=\"list-group-item\" v-bind:class=\"{ 'active': v-link-active }\">\n            <span class=\"badge\">0</span>\n            Posts\n        </a>\n        <a v-link=\"{ path: '/admin/categories' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Categories\n        </a>\n        <a v-link=\"{ path: '/admin/photos' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Photos\n        </a>\n        <a v-link=\"{ path: '/admin/users' }\" class=\"list-group-item\">\n            <span class=\"badge\">0</span>\n            Users\n        </a>\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-md-3\">\n    <div class=\"list-group\">\n        <a v-link=\"{ path: '/admin/posts' }\" class=\"list-group-item\" :class=\"{ 'active' : v-link-active }\">\n            <span class=\"badge\">0</span>\n            Posts\n        </a>\n        <a v-link=\"{ path: '/admin/categories' }\" class=\"list-group-item\" :class=\"{ 'active' : v-link-active }\">\n            <span class=\"badge\">0</span>\n            Categories\n        </a>\n        <a v-link=\"{ path: '/admin/photos' }\" class=\"list-group-item\" :class=\"{ 'active' : v-link-active }\">\n            <span class=\"badge\">0</span>\n            Photos\n        </a>\n        <a v-link=\"{ path: '/admin/users' }\" class=\"list-group-item\" :class=\"{ 'active' : v-link-active }\">\n            <span class=\"badge\">0</span>\n            Users\n        </a>\n    </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
