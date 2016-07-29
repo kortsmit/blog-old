@@ -32,7 +32,7 @@ $factory->define(Blog\Post::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'category_id' => 1,
-        'title' => $faker->realText($faker->numberBetween(10, 15)),
+        'title' => $faker->text(),
         'slug' => $faker->slug,
         'description' => $faker->realText($faker->numberBetween(100, 200)),
         'text' => $faker->realText($faker->numberBetween(250, 500)),
