@@ -2,6 +2,7 @@
 
 namespace Blog\Http\Controllers;
 
+use Blog\Photo;
 use Illuminate\Http\Request;
 
 use Blog\Http\Requests;
@@ -9,7 +10,26 @@ use Blog\Http\Requests;
 class PhotosController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create instance of Photo.
+     *
+     * @var photo
+     */
+    private $photo;
+
+    /**
+     * PhotosController constructor.
+     *
+     * @param \Blog\Photo $photo
+     */
+    public function __construct(Photo $photo)
+    {
+        $this->middleware('api');
+
+        $this->photo = $photo;
+    }
+
+    /**
+     * Display a listing of photos.
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +39,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new photo.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +49,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created photo in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -40,7 +60,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified photo.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -51,7 +71,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified photo.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -62,7 +82,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified photo in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -74,7 +94,7 @@ class PhotosController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified photo from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

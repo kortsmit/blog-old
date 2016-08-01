@@ -2,6 +2,7 @@
 
 namespace Blog\Http\Controllers;
 
+use Blog\Post;
 use Illuminate\Http\Request;
 
 use Blog\Http\Requests;
@@ -9,6 +10,24 @@ use Blog\Http\Requests;
 class PostsController extends Controller
 {
 
+    /**
+     * Create instance of Post.
+     *
+     * @var post
+     */
+    private $post;
+
+    /**
+     * PostsController constructor.
+     *
+     * @param \Blog\Post $post
+     */
+    public function __construct(Post $post)
+    {
+        $this->middleware('api');
+
+        $this->post = $post;
+    }
 
     /**
      * Display a listing of the posts.

@@ -2,12 +2,32 @@
 
 namespace Blog\Http\Controllers;
 
+use Blog\Category;
 use Illuminate\Http\Request;
 
 use Blog\Http\Requests;
 
 class CategoriesController extends Controller
 {
+    /**
+     * Create instance of Category.
+     *
+     * @var post
+     */
+    private $category;
+
+    /**
+     * PostsController constructor.
+     *
+     * @param \Blog\Category $category
+     */
+    public function __construct(Category $category)
+    {
+        $this->middleware('api');
+
+        $this->category = $category;
+    }
+
     /**
      * Display a listing of the resource.
      *
