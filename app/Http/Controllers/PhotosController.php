@@ -35,7 +35,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+        return $this->photo->get();
     }
 
     /**
