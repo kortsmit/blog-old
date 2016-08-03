@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <div class="list-group">
             <a v-link="{ path: '/admin/posts' }"
                class="list-group-item"

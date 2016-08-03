@@ -5,7 +5,7 @@
         <div class="row">
             <menu :current="posts"></menu>
 
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <table class="table table-hover">
 
                     <thead>
