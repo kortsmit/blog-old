@@ -14,6 +14,6 @@
         components: {
             blog,
         },
-        replace: false
+
     }
 </script>

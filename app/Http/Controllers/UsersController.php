@@ -2,6 +2,7 @@
 
 namespace Blog\Http\Controllers;
 
+use Blog\User;
 use Illuminate\Http\Request;
 
 use Blog\Http\Requests;
@@ -9,13 +10,32 @@ use Blog\Http\Requests;
 class UsersController extends Controller
 {
     /**
+     * Create instance of User.
+     *
+     * @var post
+     */
+    private $user;
+
+    /**
+     * UsersController constructor.
+     *
+     * @param \Blog\User $user
+     */
+    public function __construct(User $user)
+    {
+        $this->middleware('api');
+
+        $this->user = $user;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return $this->user->get();
     }
 
     /**
