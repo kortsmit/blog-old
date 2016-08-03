@@ -17,6 +17,12 @@ router.map({
     '/blog': {
         component: require('./components/blog.vue')
     },
+    '/blog/posts/:slug': {
+        name: 'post.show',
+        component: {
+            template: 'Post slug is {{ $route.params.slug }}'
+        }
+    },
     '/about': {
         component: require('./components/about.vue')
     },
@@ -28,6 +34,12 @@ router.map({
     },
     '/admin/posts': {
         component: require('./components/admin/posts.vue')
+    },
+    '/admin/posts/:id/edit': {
+        name: 'admin.post.edit',
+        component: {
+            template: 'Post ID is {{ $route.params.id }}'
+        }
     },
     '/admin/categories': {
         component: require('./components/admin/categories.vue')

@@ -11,7 +11,10 @@
                 <div class="panel-footer">
                     <div class="btn-group btn-group-xs">
                         <a class="btn btn-default">Like</a>
-                        <a class="btn btn-default">View</a>
+                        <a v-link="{ name: 'post.show', params: { slug: post.slug }}"
+                           class="btn btn-default">
+                            View
+                        </a>
                     </div>
                 </div>
             </div>
