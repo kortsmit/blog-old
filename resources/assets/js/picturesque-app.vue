@@ -1,6 +1,6 @@
 <template>
     <div>
-        <navigation></navigation>
+        <picturesque-navigation></picturesque-navigation>
     </div>
     <div id="app">
         <section class="content">
@@ -14,13 +14,13 @@
 </style>
 
 <script>
-    import navigation from './components/template/navigation.vue'
+    import PicturesqueNavigation from './components/template/picturesque-navigation.vue'
 
     export default {
         name: 'app',
 
         components: {
-            navigation
+            PicturesqueNavigation
         },
         replace: false
     }

@@ -3,20 +3,20 @@
         <h1>Admin</h1>
 
         <div class="row">
-            <menu></menu>
+            <picturesque-menu></picturesque-menu>
 
         </div>
     </section>
 </template>
 
 <script>
-    import menu from './../components/admin/menu.vue'
+    import PicturesqueMenu from './../components/admin/picturesque-menu.vue'
 
     export default {
         name: 'admin',
 
         components: {
-            menu
+            PicturesqueMenu
         },
         replace: false
     }

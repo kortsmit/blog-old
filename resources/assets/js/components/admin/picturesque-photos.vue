@@ -3,20 +3,20 @@
         <h1>Photos</h1>
 
         <div class="row">
-            <menu :current="photos"></menu>
+            <picturesque-menu :current="photos"></picturesque-menu>
 
         </div>
     </section>
 </template>
 
 <script>
-    import menu from './menu.vue'
+    import PicturesqueMenu from './picturesque-menu.vue'
 
     export default {
         name: 'photos',
 
         components: {
-            menu
+            PicturesqueMenu
         },
         replace: false
     }

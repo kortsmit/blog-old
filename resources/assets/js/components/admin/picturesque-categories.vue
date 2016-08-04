@@ -3,18 +3,18 @@
         <h1>Categories</h1>
 
         <div class="row">
-            <menu :current="categories"></menu>
+            <picturesque-menu :current="categories"></picturesque-menu>
 
             <div class="col-md-10">
                 <table class="table table-hover">
 
                     <thead>
-                    <tr>
-                        <th width="1%">#</th>
-                        <th>Title</th>
-                        <th width="1%"></th>
-                        <th width="1%"></th>
-                    </tr>
+                        <tr>
+                            <th width="1%">#</th>
+                            <th>Title</th>
+                            <th width="1%"></th>
+                            <th width="1%"></th>
+                        </tr>
                     </thead>
 
                     <tbody>
@@ -38,13 +38,13 @@
 </template>
 
 <script>
-    import menu from './menu.vue'
+    import PicturesqueMenu from './picturesque-menu.vue'
 
     export default {
-        name: 'categories',
+        name: 'picturesque-categories',
 
         components: {
-            menu
+            PicturesqueMenu
         },
 
         data() {

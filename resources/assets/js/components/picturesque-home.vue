@@ -1,18 +1,18 @@
 <template>
     <section class="content">
         <h1>Home</h1>
-        <blog></blog>
+        <picturesque-blog></picturesque-blog>
     </section>
 </template>
 
 <script>
-    import blog from './../components/blog.vue'
+    import PicturesqueBlog from './../components/picturesque-blog.vue'
 
     export default {
         name: 'home',
 
         components: {
-            blog,
+            PicturesqueBlog,
         },
 
     }

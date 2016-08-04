@@ -3,7 +3,7 @@
         <h1>Users</h1>
 
         <div class="row">
-            <menu :current="users"></menu>
+            <picturesque-menu :current="users"></picturesque-menu>
 
             <div class="col-md-10">
                 <table class="table table-hover">
@@ -40,13 +40,13 @@
 </template>
 
 <script>
-    import menu from './menu.vue'
+    import PicturesqueMenu from './picturesque-menu.vue'
 
     export default {
         name: 'users',
 
         components: {
-            menu
+            PicturesqueMenu
         },
 
         data() {
@@ -64,9 +64,9 @@
             fetchUsers () {
                 let self = this
                 self.$http.get('api/users')
-                        .then(function (response) {
-                            self.users = JSON.parse(response.data)
-                        })
+                    .then(function (response) {
+                        self.users = JSON.parse(response.data)
+                    })
             },
 
         }

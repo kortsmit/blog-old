@@ -3,7 +3,7 @@
         <h1>Posts</h1>
 
         <div class="row">
-            <menu :current="posts"></menu>
+            <picturesque-menu :current="posts"></picturesque-menu>
 
             <div class="col-md-10">
                 <table class="table table-hover">
@@ -43,18 +43,29 @@
 </template>
 
 <script>
-    import menu from './menu.vue'
+    import PicturesqueMenu from './picturesque-menu.vue'
 
     export default {
-        name: 'posts',
+        name: 'picturesque-posts',
 
         components: {
-            menu
+            PicturesqueMenu
+        },
+
+        props: {
+            loading: true,
         },
 
         data() {
             return {
-                posts: []
+                posts: [],
+                pagination: {
+                    total: 0,
+                    per_page: 10,
+                    from: 1,
+                    to: 0,
+                    current_page: 1
+                },
             }
         },
 
@@ -68,6 +79,7 @@
                 let self = this
                 self.$http.get('api/posts')
                     .then(function (response) {
+                        console.log(response);
                         self.posts = JSON.parse(response.data)
                     })
             },
