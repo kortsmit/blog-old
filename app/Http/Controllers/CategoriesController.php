@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace Picturesque\Http\Controllers;
 
-use Blog\Category;
+use Picturesque\Category;
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
+use Picturesque\Http\Requests;
 
 class CategoriesController extends Controller
 {
@@ -19,7 +19,7 @@ class CategoriesController extends Controller
     /**
      * PostsController constructor.
      *
-     * @param \Blog\Category $category
+     * @param \Picturesque\Category $category
      */
     public function __construct(Category $category)
     {

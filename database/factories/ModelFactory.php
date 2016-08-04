@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(Blog\User::class, function (Faker\Generator $faker) {
+$factory->define(Picturesque\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
@@ -20,7 +20,7 @@ $factory->define(Blog\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Blog\Category::class, function (Faker\Generator $faker) {
+$factory->define(Picturesque\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->text(),
         'slug' => $faker->slug($faker->numberBetween(1, 2)),
@@ -28,7 +28,7 @@ $factory->define(Blog\Category::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Blog\Post::class, function (Faker\Generator $faker) {
+$factory->define(Picturesque\Post::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'category_id' => 1,

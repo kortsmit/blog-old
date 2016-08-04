@@ -1,8 +1,8 @@
 <?php
 
-namespace Blog\Http\Controllers\Auth;
+namespace Picturesque\Http\Controllers\Auth;
 
-use Blog\Http\Controllers\Controller;
+use Picturesque\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

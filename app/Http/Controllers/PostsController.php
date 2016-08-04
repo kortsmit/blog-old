@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace Picturesque\Http\Controllers;
 
-use Blog\Post;
+use Picturesque\Post;
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
+use Picturesque\Http\Requests;
 
 class PostsController extends Controller
 {
@@ -20,7 +20,7 @@ class PostsController extends Controller
     /**
      * PostsController constructor.
      *
-     * @param \Blog\Post $post
+     * @param \Picturesque\Post $post
      */
     public function __construct(Post $post)
     {
@@ -36,7 +36,12 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return $this->post->get();
+        return $this->post->select(
+            'id',
+            'title',
+            'description')
+            ->orderBy('updated_at')
+            ->get();
     }
 
     /**

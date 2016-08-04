@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace Picturesque\Http\Controllers;
 
-use Blog\Photo;
+use Picturesque\Photo;
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
+use Picturesque\Http\Requests;
 
 class PhotosController extends Controller
 {
@@ -19,7 +19,7 @@ class PhotosController extends Controller
     /**
      * PhotosController constructor.
      *
-     * @param \Blog\Photo $photo
+     * @param \Picturesque\Photo $photo
      */
     public function __construct(Photo $photo)
     {

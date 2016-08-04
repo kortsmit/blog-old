@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace Picturesque\Http\Controllers;
 
-use Blog\User;
+use Picturesque\User;
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
+use Picturesque\Http\Requests;
 
 class UsersController extends Controller
 {
@@ -19,7 +19,7 @@ class UsersController extends Controller
     /**
      * UsersController constructor.
      *
-     * @param \Blog\User $user
+     * @param \Picturesque\User $user
      */
     public function __construct(User $user)
     {

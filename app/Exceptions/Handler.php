@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Exceptions;
+namespace Picturesque\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

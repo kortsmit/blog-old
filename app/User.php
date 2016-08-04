@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog;
+namespace Picturesque;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

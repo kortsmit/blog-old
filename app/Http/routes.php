@@ -6,12 +6,12 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api', 'middleware' => ['api']], function () {
     
-    Route::resource('/posts', '\Blog\Http\Controllers\PostsController');
+    Route::resource('/posts', '\Picturesque\Http\Controllers\PostsController');
 
-    Route::resource('/categories', '\Blog\Http\Controllers\CategoriesController');
+    Route::resource('/categories', '\Picturesque\Http\Controllers\CategoriesController');
 
-    Route::resource('/photos', '\Blog\Http\Controllers\PhotosController');
+    Route::resource('/photos', '\Picturesque\Http\Controllers\PhotosController');
 
-    Route::resource('/users', '\Blog\Http\Controllers\UsersController');
+    Route::resource('/users', '\Picturesque\Http\Controllers\UsersController');
     
 });

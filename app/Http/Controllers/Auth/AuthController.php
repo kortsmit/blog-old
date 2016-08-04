@@ -1,10 +1,10 @@
 <?php
 
-namespace Blog\Http\Controllers\Auth;
+namespace Picturesque\Http\Controllers\Auth;
 
-use Blog\User;
+use Picturesque\User;
 use Validator;
-use Blog\Http\Controllers\Controller;
+use Picturesque\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
