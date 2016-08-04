@@ -6,7 +6,7 @@
 
 <script>
    export default {
-        name: 'one-loader',
+        name: 'picturesque-loader',
 
         props: {
             loading: false

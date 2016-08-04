@@ -43,7 +43,7 @@
 
 <script>
    export default {
-        name: 'one-pagination',
+        name: 'picturesque-pagination',
 
         props: {
             pagination: {
